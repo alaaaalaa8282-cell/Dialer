@@ -19,9 +19,12 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Download gradle-wrapper.jar
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Fix gradle-wrapper.jar
         run: |
-          curl -L https://github.com/nicktindall/cyclon.p2p/raw/master/gradle/wrapper/gradle-wrapper.jar \
+          curl -L "https://raw.githubusercontent.com/gradle/gradle/v8.7.0/gradle/wrapper/gradle-wrapper.jar" \
             -o gradle/wrapper/gradle-wrapper.jar
 
       - name: Grant execute permission for gradlew
