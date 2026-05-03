@@ -22,4 +22,6 @@ open class SimpleActivity : BaseSimpleActivity() {
     override fun getAppLauncherName() = getString(R.string.app_launcher_name)
 
     override fun getRepositoryName() = "Dialer"
+
+    override fun isProVersion() = true
 }
